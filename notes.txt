@@ -1,0 +1,88 @@
+Decision Trees
+--------------
+
+* Greedy algorithm
+* Partitions the space recursively
+* Generates a nested if-then-else statement
+
+* Extremely non-linear (step functions)
+* Sensitive to noise
+* Requires enormous amounts of data for complex cases
+  - show chessboard pattern
+* Requires feature modelling to bring decision surface parallel to an axis
+  - Show XOR example and projection onto x xor y
+
+
+
+
+Industrial Machine Learning
+---------------------------
+
+When should ML be used?
+* To augment modelling
+* When you can identify what influences an outcome but not how
+* When you can measure your success
+
+When should ML not be used?
+* To solve the entire problem
+* To replace modelling
+* Without a baseline
+
+
+Traps and Pitfalls
+------------------
+
+* Training on testing data
+* Biasing
+  - Predicting the past from the future
+  - Non-representative samples
+* Not having a nullable hypothesis (is it really better)
+* Sanity checks for training (free parameters in data vs model)
+* Overfitting and other forms of over-optimization
+* Trying to do everything with one model
+* Not knowing your data
+
+* No Free Lunch principle
+
+* Story: Tanks
+* Story: University Collaboration (student does better than research dept)
+* Story: Overlapper v1 and not knowing when to stop
+  - 
+
+* Story: Medical Insurance and Diabetics
+  - Discovering missing features
+
+
+Toolbox
+-------
+
+* Up to 90% of time in ETL (Extract, Transform, Load)
+
+* Data visualization (TSNE)
+
+* Modelling
+  - Know and learn your maths
+
+* Smoothing (information bottleneck methods)
+  - PCA
+  - Deep neural nets, autoencoders
+* Base classifiers: Neural Nets, Decision Trees, GLMs
+* Meta algorithms (bagging, boosting)
+
+* Make models explorable
+
+
+What you need to know
+---------------------
+
+* Mathematics
+* Statistics
+* Compsci (using the right algorithm can be 100x faster)
+* HPC (most things can go 20x faster)
+
+
+
+
+Questions?
+----------
+
