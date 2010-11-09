@@ -4,6 +4,7 @@
 %\usetheme{Madrid}
 %\usepackage{pgf}
 \usecolortheme{orchid}
+\usepackage{pgf}
 
 %\hyphenpenalty=5000
 %\tolerance=1000
@@ -37,100 +38,157 @@
   \item ML Consulting
   \item E-commerce recommendations and online advertising (Recoset)
   \end{itemize}
-  
-  \item Mine your silo of historical data to optimize your future
-\end{itemize}
-
-Where we use Python?
-\begin{itemize}
-  \item Rapid prototyping of Mathematical Algorithms
-  \item Analytical infrastructure (glue that holds algorithms together)
-  \item Data munging
-\end{itemize}
-
-We're hiring well-rounded people who know how to deal with data!
 
 \end{frame}
 
-\begin{frame}{A Well-Rounded Company}
+\pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-10}{chess-8x8-10}
+\pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-100}{chess-8x8-100}
+\pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-1000}{chess-8x8-1000}
+\pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-10000}{chess-8x8-10000}
 
-\begin{itemize}
-  \item Startup: lots of jobs to do
-  \item Use the most efficient tool for the job!
-  \item Tools: Python, Javascript, C++, R, Ruby, Java, Clojure, ...
-  \item Amplifiers: Mathematics, Statistics, Machine Learning
-  \item We need Well-Rounded people
-\end{itemize}
+\begin{frame}
 
-\end{frame}
-
-\begin{frame}{The Well-Rounded Startup Employee}
-
-\begin{centering}
-
-\begin{tabular}{ll}
-\textbf{Attribute}         &  \textbf{Value}  \vspace{0.5cm} \\
-
-Creativity                 &  ideas        \\ 
-Culture                    &  choices      \vspace{0.5cm} \\ 
-
-Personality                &  teamwork     \vspace{0.5cm} \\
-
-Programming/IT             &  tools        \\
-Science                    &  amplifiers   \\
-Engineering/Management     &  scaling      \vspace{0.5cm} \\ 
-
-Experience                 &  risk, speed         
-\end{tabular}
-
-\end{centering}
-
-\end{frame}
-
-\begin{frame}{It's Worth Real Money}
-\end{frame}
-
-\begin{frame}{Stepping Back...}
-
-Well-Rounded?
-\begin{itemize}
-  \item Knowledge
-  \item Culture
-  \item Creativity
-  \item Personality
-  \item Experience
-\end{itemize}
-
-\end{frame}
-
-\begin{frame}{Bill Clinton}
-
-\begin{itemize}
-  \item Experience: (Former) Leader of the Free World? (check)
-  \item Creativity: language manipulation (``I did not...'')? (check)
-  \item Personality: Steamy romps with interns? (check)
-  \item Knowledge: 
-  \item \alert{Culture and Personality}: Plays the saxophone? (check)
-\end{itemize}
-
-Playing the saxophone makes Bill Clinton more cultured and personable, and came to define him as a person.
-
-This makes him more well-rounded to people, which helped him to win elections.
+  \begin{center}
+    \pgfuseimage{chess-8x8-10}
+  \end{center}
 
 \end{frame}
 
 \begin{frame}
 
-It's worth trying to be well-rounded.
-
-You can get a lot of knowledge and culture with Python.
-
-But don't stop there!
-
-\vskip 1cm
-\textit{We're hiring well-rounded people who know how to deal with data!}
+  \begin{center}
+    \pgfuseimage{chess-8x8-100}
+  \end{center}
 
 \end{frame}
+
+\begin{frame}
+
+  \begin{center}
+    \pgfuseimage{chess-8x8-1000}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{center}
+    \pgfuseimage{chess-8x8-10000}
+  \end{center}
+
+\end{frame}
+
+
+\pgfdeclareimage[interpolate=true,height=3.5cm]{tank-yes}{tank-yes}
+\pgfdeclareimage[interpolate=true,height=3.5cm]{tank-no}{tank-no}
+
+\begin{frame}{Story: Tanks in the Desert}
+
+  \begin{center}
+    \begin{tabular}{cc}
+      \pgfuseimage{tank-yes} & \pgfuseimage{tank-no} \\
+    \end{tabular}
+  \end{center}
+  
+\end{frame}
+
+\pgfdeclareimage[interpolate=true,height=7cm]{insulin}{insulin}
+
+\begin{frame}{Story: Medical Expense Fraud}
+
+  \begin{center}
+    \pgfuseimage{insulin}
+  \end{center}
+  
+\end{frame}
+
+\begin{frame}{Explaining a Forest of Decision Trees}
+
+  \begin{columns}
+    \begin{column}{0.35 \textwidth}
+      \begin{centering}
+      \pgfdeclareimage[interpolate=true,height=3.5cm]{decision-tree-explain}{decision-tree-explain}
+      \structure{P(car crash)}
+      \vspace*{\fill}
+      \pgfuseimage{decision-tree-explain}
+      \small \vfill
+      \begin{tabular}{|l|r|r|} \hline
+        \structure{Feature} & \structure{Value} & \structure{Score} \\
+        \hline
+        Bias &    &  0.3 \\
+        Male & Y  & +0.1 \\
+        Age  & 45 & -0.3 \\
+        \hline
+      \end{tabular}
+      \end{centering}
+    \end{column}
+    \begin{column}{0.65 \textwidth}
+      \begin{itemize}
+      \item Immensely useful in finding problems
+      \item Given a \alert{feature vector}, what features were the \alert{strongest contributors} to the result?
+      \item Record the prediction at both \alert{internal nodes} and \alert{leaves}
+      \item When we follow a branch, we assign the difference between the node predictions to the splitting feature
+      \item For multiple trees, we take the weighted sum
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Boosting Algorithm}
+  \pgfdeclareimage[interpolate=true,height=6cm]{boosting}{boosting}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting1}{boosting1}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting4}{boosting4}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting8}{boosting8}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting64}{boosting64}
+
+  \begin{columns}
+    \column[T]{.1\textwidth}
+    \pgfuseimage{boosting1}\\
+    \pgfuseimage{boosting4}\\
+    \pgfuseimage{boosting8}\\
+    \pgfuseimage{boosting64}
+
+    \column[T]{.8\textwidth}
+    \begin{itemize}
+    \item Leverages a \alert{weak} and \alert{low-capacity} learning algorithm to produce state of the art accuracy
+      \begin{itemize}
+      \item The weak learning algorithm might have characteristics we want to preserve
+      \end{itemize}
+    \item Runs the \alert{weak learner} multiple times with \alert{extra weight on difficult examples}
+    \item Produces a linear combination (\alert{ensemble}) of weak classifiers
+    \item Adds \alert{automatic capacity control}
+    \item Makes weak learner \alert{much more aggressive}
+    \end{itemize}
+    
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting1}{boosting1}
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting4}{boosting4}
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting8}{boosting8}
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting64}{boosting64}
+
+  \begin{center}
+    \begin{tabular}{cc}
+      \pgfuseimage{boosting1} & \pgfuseimage{boosting4} \\
+      \pgfuseimage{boosting8} & \pgfuseimage{boosting64}
+    \end{tabular}
+  \end{center}
+
+\end{frame}
+
+
+\begin{frame}{It's Worth Real Money}
+\pgfdeclareimage[interpolate=true,height=5cm]{salaries-venn}{salaries-venn}
+
+  \begin{center}
+    \pgfuseimage{salaries-venn}
+  \end{center}
+
+\end{frame}
+
 
 
 
