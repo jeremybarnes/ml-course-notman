@@ -27,6 +27,130 @@
   \item Decision Trees
   \item Industrial Machine Learning
   \item My toolbox
+  \item Applications: Computational Linguistics, Recommendations
+  \end{itemize}
+\end{frame}
+
+\pgfdeclareimage[interpolate=true,height=3.5cm]{tank-yes}{tank-yes}
+\pgfdeclareimage[interpolate=true,height=3.5cm]{tank-no}{tank-no}
+
+
+\begin{frame}{Story: Tanks in the Desert}
+
+  \begin{center}
+    \begin{tabular}{cc}
+      \pgfuseimage{tank-yes} & \pgfuseimage{tank-no} \\
+    \end{tabular}
+  \end{center}
+  
+\end{frame}
+
+\begin{frame}{Decision Trees}
+  \begin{itemize}
+  \item A very simple Machine Learning algorithm
+  \item Learns a hierarchical set of rules: \\ \vspace{0.2cm}
+      \texttt{%
+        {\bf if}   \textsl{predicate} \\
+        {\bf then} \textsl{action1} \\
+        {\bf else} \textsl{action2} \\
+      }
+    \item for example \\ \vspace{0.2cm}
+      \texttt{%
+        {\bf if}   \textsl{gender=Male} \\
+        {\bf then} \\
+        \hspace{1cm} {\bf if}  \textsl{age < 25} \\
+        \hspace{1cm} {\bf then} $p(crash) = 0.6$ \\
+        \hspace{1cm} {\bf else} $p(crash) = 0.1$ \\
+        {\bf else} $p(crash) = 0.4$ \\
+      }
+  \end{itemize}
+\end{frame}
+
+\pgfdeclareimage[interpolate=true,height=6cm]{space-partitioning}{space-partitioning}
+
+\begin{frame}{Space Partitioning}
+
+  \begin{center}
+    \pgfuseimage{space-partitioning}
+  \end{center}
+  
+\end{frame}
+
+\begin{frame}{How?}
+  Greedy Algorithm to Separate Data
+  \begin{enumerate}
+    \item Learns the ``best'' split at the top level
+      \begin{itemize}
+      \item Try every value of every variable
+      \item Choose the one that minimises a cost function
+      \end{itemize}
+    \item Partition the dataset along the best split
+    \item Repeat (recursion) on each of the halves of the dataset
+    \item Stop when:
+      \begin{itemize}
+      \item Maximum depth reached
+      \item Data is perfectly separated
+      \end{itemize}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Cost Functions}
+
+  Regression
+  \begin{itemize}
+    \item Calculate label mean of each half of the data
+    \item cost = least squares between data and partition means
+  \end{itemize}
+
+  Classification
+  \begin{itemize}
+    \item Measure the impurity of each of the classes
+    \item Gini, entropy, ...
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Advantages}
+  \begin{itemize}
+  \item Simple
+  \item Fast
+  \item Easy to understand output
+  \item Can learn highly non-linear surfaces
+  \item Works well with lots of dimensions (features)
+  \item Not affected by redundant features
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Disadvantages}
+  \begin{itemize}
+  \item Sensitive to noise
+  \item Cannot learn smooth functions
+  \item Cannot extrapolate
+  \item Requires enormous amounts of data for complex cases
+  \item Decisions must be parallel to an axis
+  \end{itemize}
+\end{frame}
+
+\pgfdeclareimage[interpolate=true,height=7cm]{insulin}{insulin}
+
+\begin{frame}{Story: Medical Expense Fraud}
+
+  \begin{center}
+    \pgfuseimage{insulin}
+  \end{center}
+  
+\end{frame}
+
+\begin{frame}{Feature Engineering}
+  \begin{itemize}
+  \item Adding information to the dataset to make the classifier's job easier
+  \item For example, adding ``buys insulin regularly''
+  \item Feature types
+    \begin{itemize}
+      \item Derived from existing features
+      \item Added information
+      \item Art
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -78,6 +202,10 @@
     \end{tabular}
   \end{center}
 
+  Add two features: \\
+  $x' = 8x \mod 2$ \\
+  $y' = 8y \mod 2$ 
+  
 \end{frame}
 
 \pgfdeclareimage[interpolate=true,height=7cm]{ring-8-10}{ring-8-10}
@@ -133,30 +261,160 @@
 \end{frame}
 
 
-\pgfdeclareimage[interpolate=true,height=3.5cm]{tank-yes}{tank-yes}
-\pgfdeclareimage[interpolate=true,height=3.5cm]{tank-no}{tank-no}
+\begin{frame}{Ensemble Methods}
+  \begin{itemize}
+  \item Decision Trees are not very useful by themselves
+  \item Excellent basis for \alert{ensemble methods}
+  \item Use Boosting, Bagging, random sampling
+  \item Random Forests of 10,000 decision trees
+    \begin{itemize}
+    \item Better noise rejection
+    \item Higher capacity
+    \item More robust
+    \end{itemize}
+  \end{itemize}
+\end{frame}
 
-\begin{frame}{Story: Tanks in the Desert}
+\begin{frame}{My Toolbox}
+
+  \begin{itemize}
+  \item Feature Engineering
+    \begin{itemize}
+    \item Mathematical Modelling
+    \item Smoothing
+      \begin{itemize}
+        \item Principal Component Analysis
+        \item Deep Neural Networks
+        \item Autoencoders
+      \end{itemize}
+    \end{itemize}
+  \item Data
+    \begin{itemize}
+    \item Data visualization and exploration (TSNE)
+    \item Data cleanup
+    \end{itemize}
+  \item Machine Learning
+    \begin{itemize}
+    \item Neural Nets
+    \item Generalized Linear Models
+    \item Decision trees (random forests)
+    \item Boosting, bagging, randomization
+    \item Exploration tools (explain algorithms' responses)
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Boosting Algorithm}
+  \pgfdeclareimage[interpolate=true,height=6cm]{boosting}{boosting}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting1}{boosting1}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting4}{boosting4}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting8}{boosting8}
+  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting64}{boosting64}
+
+  \begin{columns}
+    \column[T]{.1\textwidth}
+    \pgfuseimage{boosting1}\\
+    \pgfuseimage{boosting4}\\
+    \pgfuseimage{boosting8}\\
+    \pgfuseimage{boosting64}
+
+    \column[T]{.8\textwidth}
+    \begin{itemize}
+    \item Build on a \alert{weak learning algorithm} (eg, Decision Trees)
+      \begin{itemize}
+      \item it may have characteristics we want to preserve
+      \end{itemize}
+    \item Use the weak learner multiple times
+    \item \alert{Boost the weight} of hard examples each time
+    \item Robust to overfitting
+    \end{itemize}
+    
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting1}{boosting1}
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting4}{boosting4}
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting8}{boosting8}
+  \pgfdeclareimage[interpolate=true,height=3cm]{boosting64}{boosting64}
 
   \begin{center}
     \begin{tabular}{cc}
-      \pgfuseimage{tank-yes} & \pgfuseimage{tank-no} \\
+      \pgfuseimage{boosting1} & \pgfuseimage{boosting4} \\
+      \pgfuseimage{boosting8} & \pgfuseimage{boosting64}
     \end{tabular}
   \end{center}
-  
+
 \end{frame}
 
-\pgfdeclareimage[interpolate=true,height=7cm]{insulin}{insulin}
+\begin{frame}{Industrial Machine Learning}
 
-\begin{frame}{Story: Medical Expense Fraud}
+\begin{itemize}
+  \item Up to 90\% of time in ETL (Extract, Transform, Load)
+  \item Very important: data, understanding
+  \item Important: process, features
+  \item Least important: algorithm
+\end{itemize}
 
-  \begin{center}
-    \pgfuseimage{insulin}
-  \end{center}
-  
 \end{frame}
+
+\begin{frame}{When should ML be used?}
+  \begin{itemize}
+  \item To augment modelling
+  \item When you can identify \alert{what} influences an outcome but not \alert{how}
+  \item When you can measure your success
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{When should ML \alert{not} be used?}
+  \begin{itemize}
+  \item To solve the entire problem
+  \item To replace modelling
+  \item To replace thought
+  \item Without a \alert{nullable} hypothesis
+  \item When controlling something dangerous or important
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Traps and Pitfalls}
+
+* Training on testing data
+* Biasing
+  - Predicting the past from the future
+  - Non-representative samples
+  - Can be very subtle
+* Not having a nullable hypothesis (is it really better)
+* Using a complex classifier with little data
+* Overfitting and other forms of over-optimization
+* Trying to do everything with one model
+* No Free Lunch principle
+
+\end{frame}
+
 
 \pgfdeclareimage[interpolate=true,height=7cm]{notaterrorist}{Khalid_bin_Sultan}
+
+\begin{frame}{Undesirable Characteristics of Classifiers}
+\begin{itemize}
+\item Can't run the same experiment twice...
+  \begin{itemize}
+    \item Results got worse when I retried (\alert{repeatability})
+    \item It took 300 CPU-years and my account was revoked (\alert{speed})
+  \end{itemize}
+\item Black box that can't tell us how to improve (\alert{explorability})
+\item Needs \$10 million of data to learn a non-planar decision surface (\alert{non-linearity})
+\item Lots of knobs to play with
+  \begin{itemize}
+  \item No \alert{automatic capacity control} (done manually)
+  \item Requires $\alpha_{0,0} ... \zeta_{23,37}$ to be set \emph{just right}... (\alert{automatic tuning})
+  \item Need to perform manual \alert{feature selection} experiments
+  \end{itemize}
+\item Changing feature $z$ from $0.12345$ to $0.12346$ lead to 13\% better test performance (\alert{sensitivity})
+\item Output is not \alert{probabilistic}
+\end{itemize}
+\end{frame}
 
 \begin{frame}{Story: Named Entity Classification}
 
@@ -167,8 +425,26 @@
   
 \end{frame}
 
+\begin{frame}{Toolbox: Cleaning Data Using Boosting}
+  
+  \begin{itemize}
+  \item Boosted classifiers focus \alert{almost exclusively} on examples with \alert{high weights}
+    \begin{itemize}
+    \item High-weighted examples can have 100 times more weight than average
+    \item To improve the classifier, we only need to improve these examples (they effectively ignore the rest)
+    \end{itemize}
+  \item If an example has a high boosting weight, it either:
+    \begin{itemize}
+    \item Is a difficult (and so informative) example; or
+    \item Is mis-tagged
+    \end{itemize}
+  \item Re-tag (carefully) those with high weights
+  \item Can get a true positive rate $> 50\%$ with this technique
+  \end{itemize}
+  
+\end{frame}
 
-\begin{frame}{Explaining a Forest of Decision Trees}
+\begin{frame}{Toolbox: Explaining a Forest of Decision Trees}
 
   \begin{columns}
     \begin{column}{0.35 \textwidth}
@@ -200,111 +476,11 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Boosting Algorithm}
-  \pgfdeclareimage[interpolate=true,height=6cm]{boosting}{boosting}
-  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting1}{boosting1}
-  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting4}{boosting4}
-  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting8}{boosting8}
-  \pgfdeclareimage[interpolate=true,height=1.5cm]{boosting64}{boosting64}
-
-  \begin{columns}
-    \column[T]{.1\textwidth}
-    \pgfuseimage{boosting1}\\
-    \pgfuseimage{boosting4}\\
-    \pgfuseimage{boosting8}\\
-    \pgfuseimage{boosting64}
-
-    \column[T]{.8\textwidth}
-    \begin{itemize}
-    \item Leverages a \alert{weak} and \alert{low-capacity} learning algorithm to produce state of the art accuracy
-      \begin{itemize}
-      \item The weak learning algorithm might have characteristics we want to preserve
-      \end{itemize}
-    \item Runs the \alert{weak learner} multiple times with \alert{extra weight on difficult examples}
-    \item Produces a linear combination (\alert{ensemble}) of weak classifiers
-    \item Adds \alert{automatic capacity control}
-    \item Makes weak learner \alert{much more aggressive}
-    \end{itemize}
-    
-  \end{columns}
-\end{frame}
-
-\begin{frame}
-
-  \pgfdeclareimage[interpolate=true,height=3cm]{boosting1}{boosting1}
-  \pgfdeclareimage[interpolate=true,height=3cm]{boosting4}{boosting4}
-  \pgfdeclareimage[interpolate=true,height=3cm]{boosting8}{boosting8}
-  \pgfdeclareimage[interpolate=true,height=3cm]{boosting64}{boosting64}
-
-  \begin{center}
-    \begin{tabular}{cc}
-      \pgfuseimage{boosting1} & \pgfuseimage{boosting4} \\
-      \pgfuseimage{boosting8} & \pgfuseimage{boosting64}
-    \end{tabular}
-  \end{center}
-
-\end{frame}
-
-\begin{frame}{Using Boosting Weights to Increase Dataset Accuracy}
-  
-  \begin{itemize}
-  \item Boosted classifiers focus \alert{almost exclusively} on examples with \alert{high weights}
-    \begin{itemize}
-    \item High-weighted examples can have 100 times more weight than average
-    \item To improve the classifier, we only need to improve these examples (they effectively ignore the rest)
-    \end{itemize}
-  \item If an example has a high boosting weight, it either:
-    \begin{itemize}
-    \item Is a difficult (and so informative) example; or
-    \item Is mis-tagged
-    \end{itemize}
-  \item Re-tag (carefully) those with high weights
-  \item Can get a true positive rate $> 50\%$ with this technique
-  \end{itemize}
-  
-\end{frame}
-
-\begin{frame}{Choosing a Learning Algorithm}
-  \begin{quote}
-    I would never have thought in 2008 that we would be using decision trees as our algorithm of choice for cutting edge research! (Didier Guillevic, Ph.D. in ML, Idilia researcher, 2008)
-  \end{quote}
-  
-  \begin{itemize}
-  \item If the mapping is done well, the choice of algorithm is less crucial
-  \item Meta-algorithms (bagging, boosting) 
-  \item Practicality is the key
-    \begin{itemize}
-    \item Productivity $\propto$ modify-test cycle time
-    \item Much more time spend \alert{improving} than \alert{building}
-    \end{itemize}
-  \end{itemize}
-  
-\end{frame}
-
-\begin{frame}{Undesirable Characteristics of Classifiers}
-\begin{itemize}
-\item Can't run the same experiment twice...
-  \begin{itemize}
-    \item Results got worse when I retried (\alert{repeatability})
-    \item It took 300 CPU-years and my account was revoked (\alert{speed})
-  \end{itemize}
-\item Black box that can't tell us how to improve (\alert{explorability})
-\item Needs \$10 million of data to learn a non-planar decision surface (\alert{non-linearity})
-\item Lots of knobs to play with
-  \begin{itemize}
-  \item No \alert{automatic capacity control} (done manually)
-  \item Requires $\alpha_{0,0} ... \zeta_{23,37}$ to be set \emph{just right}... (\alert{automatic tuning})
-  \item Need to perform manual \alert{feature selection} experiments
-  \end{itemize}
-\item Changing feature $z$ from $0.12345$ to $0.12346$ lead to 13\% better test performance (\alert{sensitivity})
-\item Output is not \alert{probabilistic}
-\end{itemize}
-\end{frame}
 
 
 %\subsection{Example: Word Sense Disambiguation}
 
-\begin{frame}{Example: Word Sense Disambiguation}
+\begin{frame}{Application: Word Sense Disambiguation}
   \begin{itemize}
   \item An important computational linguistics problem
     \begin{itemize}
@@ -370,6 +546,8 @@
 
 \end{frame}
 
-
+\begin{frame}{Application: Recommendations}
+  Netflix, ...
+\end{frame}
 
 \end{document}
