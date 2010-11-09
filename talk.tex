@@ -30,21 +30,12 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{About Me}
-  
-  \begin{itemize}
-  \item Started using ML in 1999 at University
-  \item Computational Linguistics (Idilia)
-  \item ML Consulting
-  \item E-commerce recommendations and online advertising (Recoset)
-  \end{itemize}
-
-\end{frame}
-
 \pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-10}{chess-8x8-10}
 \pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-100}{chess-8x8-100}
 \pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-1000}{chess-8x8-1000}
 \pgfdeclareimage[interpolate=true,height=7cm]{chess-8x8-10000}{chess-8x8-10000}
+\pgfdeclareimage[interpolate=true,height=3.5cm]{sm-chess-8x8-10000}{chess-8x8-10000}
+\pgfdeclareimage[interpolate=true,height=3.5cm]{sm-chess-8x8-tr-10000}{chess-8x8-tr-10000}
 
 \begin{frame}
 
@@ -78,6 +69,69 @@
 
 \end{frame}
 
+\begin{frame}
+
+  \begin{center}
+    \begin{tabular}{ccc}
+      \pgfuseimage{sm-chess-8x8-10000} & $\Rightarrow$ &
+      \pgfuseimage{sm-chess-8x8-tr-10000}
+    \end{tabular}
+  \end{center}
+
+\end{frame}
+
+\pgfdeclareimage[interpolate=true,height=7cm]{ring-8-10}{ring-8-10}
+\pgfdeclareimage[interpolate=true,height=7cm]{ring-8-100}{ring-8-100}
+\pgfdeclareimage[interpolate=true,height=7cm]{ring-8-1000}{ring-8-1000}
+\pgfdeclareimage[interpolate=true,height=7cm]{ring-8-10000}{ring-8-10000}
+\pgfdeclareimage[interpolate=true,height=3.5cm]{sm-ring-8-10000}{ring-8-10000}
+\pgfdeclareimage[interpolate=true,height=3.5cm]{sm-ring-8-tr-10000}{ring-8-tr-10000}
+\pgfdeclareimage[interpolate=true,height=3.5cm]{sm-ring-8-tr2-10000}{ring-8-tr2-10000}
+
+\begin{frame}
+
+  \begin{center}
+    \pgfuseimage{ring-8-10}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{center}
+    \pgfuseimage{ring-8-100}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{center}
+    \pgfuseimage{ring-8-1000}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{center}
+    \pgfuseimage{ring-8-10000}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+
+  \begin{center}
+    \begin{tabular}{ccc}
+      \pgfuseimage{sm-ring-8-10000} & $\Rightarrow$ &
+      \pgfuseimage{sm-ring-8-tr-10000} \\
+      & & \pgfuseimage{sm-ring-8-tr2-10000}
+    \end{tabular}
+  \end{center}
+
+\end{frame}
+
 
 \pgfdeclareimage[interpolate=true,height=3.5cm]{tank-yes}{tank-yes}
 \pgfdeclareimage[interpolate=true,height=3.5cm]{tank-no}{tank-no}
@@ -101,6 +155,18 @@
   \end{center}
   
 \end{frame}
+
+\pgfdeclareimage[interpolate=true,height=7cm]{notaterrorist}{Khalid_bin_Sultan}
+
+\begin{frame}{Story: Named Entity Classification}
+
+  \begin{center}
+    \pgfuseimage{notaterrorist} \\
+    \begin{tiny}{Khalid bin Sultan, son of the Saudi Crown Prince, with US Army Commander Norman Schwartzkopf}\end{tiny}
+  \end{center}
+  
+\end{frame}
+
 
 \begin{frame}{Explaining a Forest of Decision Trees}
 
@@ -179,16 +245,130 @@
 
 \end{frame}
 
-
-\begin{frame}{It's Worth Real Money}
-\pgfdeclareimage[interpolate=true,height=5cm]{salaries-venn}{salaries-venn}
-
-  \begin{center}
-    \pgfuseimage{salaries-venn}
-  \end{center}
-
+\begin{frame}{Using Boosting Weights to Increase Dataset Accuracy}
+  
+  \begin{itemize}
+  \item Boosted classifiers focus \alert{almost exclusively} on examples with \alert{high weights}
+    \begin{itemize}
+    \item High-weighted examples can have 100 times more weight than average
+    \item To improve the classifier, we only need to improve these examples (they effectively ignore the rest)
+    \end{itemize}
+  \item If an example has a high boosting weight, it either:
+    \begin{itemize}
+    \item Is a difficult (and so informative) example; or
+    \item Is mis-tagged
+    \end{itemize}
+  \item Re-tag (carefully) those with high weights
+  \item Can get a true positive rate $> 50\%$ with this technique
+  \end{itemize}
+  
 \end{frame}
 
+\begin{frame}{Choosing a Learning Algorithm}
+  \begin{quote}
+    I would never have thought in 2008 that we would be using decision trees as our algorithm of choice for cutting edge research! (Didier Guillevic, Ph.D. in ML, Idilia researcher, 2008)
+  \end{quote}
+  
+  \begin{itemize}
+  \item If the mapping is done well, the choice of algorithm is less crucial
+  \item Meta-algorithms (bagging, boosting) 
+  \item Practicality is the key
+    \begin{itemize}
+    \item Productivity $\propto$ modify-test cycle time
+    \item Much more time spend \alert{improving} than \alert{building}
+    \end{itemize}
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Undesirable Characteristics of Classifiers}
+\begin{itemize}
+\item Can't run the same experiment twice...
+  \begin{itemize}
+    \item Results got worse when I retried (\alert{repeatability})
+    \item It took 300 CPU-years and my account was revoked (\alert{speed})
+  \end{itemize}
+\item Black box that can't tell us how to improve (\alert{explorability})
+\item Needs \$10 million of data to learn a non-planar decision surface (\alert{non-linearity})
+\item Lots of knobs to play with
+  \begin{itemize}
+  \item No \alert{automatic capacity control} (done manually)
+  \item Requires $\alpha_{0,0} ... \zeta_{23,37}$ to be set \emph{just right}... (\alert{automatic tuning})
+  \item Need to perform manual \alert{feature selection} experiments
+  \end{itemize}
+\item Changing feature $z$ from $0.12345$ to $0.12346$ lead to 13\% better test performance (\alert{sensitivity})
+\item Output is not \alert{probabilistic}
+\end{itemize}
+\end{frame}
+
+
+%\subsection{Example: Word Sense Disambiguation}
+
+\begin{frame}{Example: Word Sense Disambiguation}
+  \begin{itemize}
+  \item An important computational linguistics problem
+    \begin{itemize}
+      \item Needed to reliably solve information retrieval, machine translation, speech recognition, ...
+    \end{itemize}
+  \item Identify the meaning of words in context
+    \begin{itemize}
+      \item ``I enjoy a hot \alert{java} in the afternoon'' $\rightarrow$ \alert{coffee}
+      \item ``The economy of \alert{Java} lags that of Indonesia'' $\rightarrow$ \alert{island}
+      \item ``Weka is written in \alert{Java}'' $\rightarrow$ \alert{programming language}
+      \item BUT: “Do \alert{Java} programmers in \alert{Java} drink \alert{java}?”
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\pgfdeclareimage[interpolate=true,height=1.4cm]{telescope1}{telescope1}
+\pgfdeclareimage[interpolate=true,height=1.4cm]{telescope2}{telescope2}
+\pgfdeclareimage[interpolate=true,height=1.4cm]{telescope3}{telescope3}
+\pgfdeclareimage[interpolate=true,height=1.4cm]{telescope4}{telescope4}
+\pgfdeclareimage[interpolate=true,height=1.4cm]{telescope5}{telescope5}
+\pgfdeclareimage[interpolate=true,height=1.4cm]{telescope6}{telescope6}
+
+%\subsection{Different Types of Ambiguity}
+
+\begin{frame}{Different Types of Ambiguity}
+
+  \begin{itemize}
+  \item I saw the man with the telescope.\\
+    \fbox{\pgfuseimage{telescope1}}\hskip 0.2cm
+    \fbox{\pgfuseimage{telescope2}}\hskip 0.2cm
+    \fbox{\pgfuseimage{telescope3}}\hskip 0.2cm
+    \fbox{\pgfuseimage{telescope4}}
+    
+  \item I saw the cow with the telescope.\\
+    \fbox{\pgfuseimage{telescope5}}\hskip 0.2cm
+    \fbox{\pgfuseimage{telescope6}}
+  \item Different types of ambiguity; different ways of resolving
+  \item Sometimes not possible to know \alert{(ill-posed)}
+  \item Some kinds of errors are very costly
+  \end{itemize}
+  
+\end{frame}
+
+\begin{frame}{Difficulties Particular to Computational Linguistics}
+
+  \begin{itemize}
+  \item Language is inherently ambiguous
+  \item Meaning is difficult to represent precisely
+  \item Difficulties of annotation
+    \begin{itemize}
+    \item Expert humans can be $< 80\%$ accurate
+    \end{itemize}
+  \item Uneven Cost of errors
+    \begin{itemize}
+    \item Some errors are catastrophic; others inconsequential
+    \end{itemize}
+  \item Ill-posedness
+  \item Skewed towards common meanings
+    \begin{itemize}
+    \item Uncommon meanings are just as important
+    \end{itemize}
+  \end{itemize}
+
+\end{frame}
 
 
 

@@ -28,6 +28,8 @@ When should ML not be used?
 * To replace modelling
 * Without a baseline
 
+It's all about the features
+* Feature extraction vs generation
 
 Traps and Pitfalls
 ------------------
