@@ -95,7 +95,7 @@ def doplot(size, npoints, gen, name, title, labelx="x", labely="y"):
     plt.xlabel(labely)
 
     plt.plot(x0, y0, 'rx');
-    plt.plot(x1, y1, 'bx');
+    plt.plot(x1, y1, 'b+');
 
 
     #plt.axes().autoscale_view(tight=True, scaley=False)
@@ -113,7 +113,7 @@ doplot(8, 10, sample_chess, "chess-8x8", "Mystery distribution A")
 doplot(8, 100, sample_chess, "chess-8x8", "Mystery distribution A")
 doplot(8, 1000, sample_chess, "chess-8x8", "Mystery distribution A")
 doplot(8, 10000, sample_chess, "chess-8x8", "Mystery distribution A")
-doplot(8, 10000, sample_chess2, "chess-8x8-tr",
+doplot(8, 1000, sample_chess2, "chess-8x8-tr",
        "Mystery distribution A transformed", "$8x\  \mathrm{mod}\ 2$", "$8y\ \mathrm{mod}\ 2$")
 
 doplot(8, 10, sample_ring, "ring-8", "Mystery distribution B")
@@ -121,10 +121,10 @@ doplot(8, 100, sample_ring, "ring-8", "Mystery distribution B")
 doplot(8, 1000, sample_ring, "ring-8", "Mystery distribution B")
 doplot(8, 10000, sample_ring, "ring-8", "Mystery distribution B")
 
-doplot(8, 10000, sample_ring2, "ring-8-tr",
+doplot(8, 1000, sample_ring2, "ring-8-tr",
        "Mystery distribution B transformed", "$\sqrt{x^2 + y^2}$", "$\sqrt{(1-x)^2 + (1-y)^2}$")
 
-doplot(8, 10000, sample_ring3, "ring-8-tr2",
+doplot(8, 1000, sample_ring3, "ring-8-tr2",
        "Mystery distribution B transformed", "$8\sqrt{x^2 + y^2}\ \mathrm{mod}\ 2$", "$\sqrt{(1-x)^2 + (1-y)^2}\ \mathrm{mod}\ 2$")
 
 
